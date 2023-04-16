@@ -14,14 +14,6 @@ class UsersController < ApplicationController
         render json: user, include: :reviews
     end
 
-    def fun_boards
-        user = User.find(params[:id])
-
-        fun_boards = user.boards.select{ |board| board.title.include?('fun')}
-
-        render json: fun_boards
-    end
-    
 
 
     private
