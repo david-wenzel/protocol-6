@@ -27,7 +27,7 @@ function Login() {
       .then((user) => {
         if (!user.errors) {
           login(user);
-          navigate("/boards");
+          navigate("/areas");
         } else {
           setUsername("");
           setPassword("");

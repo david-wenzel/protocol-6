@@ -5,7 +5,7 @@ import "./App.css";
 
 // import BoardCard from "./BoardCard";
 
-function Areas({ areas, errorsList }) {
+function Areas({ areas }) {
   const { loggedIn } = useContext(UserContext);
 
   const renderAreas = areas.map((area) => (
