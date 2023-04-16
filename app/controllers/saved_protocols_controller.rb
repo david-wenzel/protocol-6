@@ -1,0 +1,2 @@
+class SavedProtocolsController < ApplicationController
+end

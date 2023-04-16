@@ -1,0 +1,2 @@
+class SavedProtocol < ApplicationRecord
+end
