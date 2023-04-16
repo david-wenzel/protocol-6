@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import NavBar from "./NavBar";
 import Login from "./Login";
 import Areas from "./Areas";
+import Protocols from "./Protocols";
 
 function App() {
   const [areas, setAreas] = useState([]);
@@ -14,7 +15,7 @@ function App() {
       .then((data) => {
         setAreas(data);
       });
-    console.log(areas);
+    console.log("areas:", { areas });
   }, []);
 
   return (
@@ -28,6 +29,18 @@ function App() {
               element={
                 <Areas
                   // errorsList={errorsList}
+                  areas={areas}
+                />
+              }
+            />
+            <Route
+              path="/areas/:id"
+              element={
+                <Protocols
+                  // errorsList={errorsList}
+                  // deleteProtocol={deleteProtocol}
+                  // handleEditProtocol={handleEditProtocol}
+                  // addProtocol={addProtocol}
                   areas={areas}
                 />
               }

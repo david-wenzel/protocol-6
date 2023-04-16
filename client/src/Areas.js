@@ -10,7 +10,7 @@ function Areas({ areas }) {
 
   const renderAreas = areas.map((area) => (
     <li key={area.id}>
-      <NavLink to={`/area/${area.id}`}>
+      <NavLink to={`/areas/${area.id}`}>
         <h1 id="section">{area.title}</h1>
       </NavLink>
     </li>

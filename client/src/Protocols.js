@@ -3,10 +3,10 @@ import { UserContext } from "./context/user";
 import { useParams } from "react-router-dom";
 import "./App.css";
 
-import PostCard from "./PostCard";
-import PostForm from "./PostForm";
+import ProtocolCard from "./ProtocolCard";
+// import PostForm from "./PostForm";
 
-export default function Posts({
+export default function Protocols({
   areas,
   addProtocol,
   deleteProtocol,
@@ -23,32 +23,37 @@ export default function Posts({
   useEffect(() => {
     const foundArea = areas.find(({ id }) => id === parsedId);
     setCurrentArea(foundArea);
+    console.log(currentArea);
   }, [areas, parsedId]);
 
   let protocols = [];
   if (currentArea && currentArea.protocols) {
-    protocols = currentArea.posts.map((protocol) => protocol);
+    protocols = currentArea.protocols.map((protocol) => protocol);
   }
 
   let renderProtocols;
   if (protocols) {
-    renderPosts = protocols.map((protocol) => (
+    renderProtocols = protocols.map((protocol) => (
       <ProtocolCard
         key={protocol.id}
-        post={post}
+        protocol={protocol}
         handleEditProtocol={handleEditProtocol}
         deleteProtocol={deleteProtocol}
       />
     ));
   }
 
-  if (loggedIn && currentBoard && currentBoard.title) {
+  if (loggedIn && currentArea && currentArea.title) {
     return (
       <div>
-        <h1 className="title">{currentBoard.title}</h1>
-        <PostForm id={parsedId} addPost={addPost} errorsList={errorsList} />
+        <h1 className="title">{currentArea.title}</h1>
+        {/* <PostForm
+          id={parsedId}
+          addProtocol={addProtocol}
+          errorsList={errorsList}
+        /> */}
         <br />
-        {renderPosts}
+        {renderProtocols}
       </div>
     );
   } else {
