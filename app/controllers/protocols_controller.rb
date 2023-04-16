@@ -22,7 +22,7 @@ class ProtocolsController < ApplicationController
 
     private
     
-    def 
+    def protocol_params
     params.permit(:img_url, :body, :area_id, :user_id)
     end
 end
