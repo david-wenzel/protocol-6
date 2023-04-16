@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :areas, except: [:show, :update] do
     resources :protocols, only: [:create, :show, :index]
   end
+  resources :saved_protocols, only: [:index, :create, :destroy]
   
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

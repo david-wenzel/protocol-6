@@ -34,8 +34,17 @@ User.create!([{
 
 
 Protocol.create!([{
+    title: "calm energy",
     img_url: "calm energy",
-    post_body: "today is the day that we move",
+    body: "today is the day that we move",
     area_id: 1,
     user_id: 1
 }])
+
+SavedProtocol.create!([
+    { protocol_id: 1, user_id: 1 },
+    { protocol_id: 2, user_id: 1 },
+    { protocol_id: 3, user_id: 2 },
+    { protocol_id: 4, user_id: 2 },
+    { protocol_id: 5, user_id: 3 }
+  ])
