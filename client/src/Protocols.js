@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "./App.css";
 
 import ProtocolCard from "./ProtocolCard";
-// import PostForm from "./PostForm";
+import ProtocolForm from "./ProtocolForm";
 
 export default function Protocols({
   areas,
@@ -23,7 +23,6 @@ export default function Protocols({
   useEffect(() => {
     const foundArea = areas.find(({ id }) => id === parsedId);
     setCurrentArea(foundArea);
-    console.log(currentArea);
   }, [areas, parsedId]);
 
   let protocols = [];
@@ -47,11 +46,11 @@ export default function Protocols({
     return (
       <div>
         <h1 className="title">{currentArea.title}</h1>
-        {/* <PostForm
+        <ProtocolForm
           id={parsedId}
           addProtocol={addProtocol}
           errorsList={errorsList}
-        /> */}
+        />
         <br />
         {renderProtocols}
       </div>

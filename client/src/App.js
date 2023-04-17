@@ -9,6 +9,36 @@ import Protocols from "./Protocols";
 function App() {
   const [areas, setAreas] = useState([]);
 
+  function addProtocol(protocol) {
+    fetch("/protocols", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(protocol),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.errors) {
+          // Find the board in the boards state that matches the board of the new post
+          const updatedAreas = areas.map((area) => {
+            if (area.id === data.area.id) {
+              // Add the new post to the posts of the matching board
+              return {
+                ...area,
+                protocols: [...area.protocols, data],
+              };
+            } else {
+              setErrorsList(data.errors);
+              return area;
+            }
+          });
+
+          setBoards(updatedAreas);
+        } else {
+          setErrorsList(data.errors);
+        }
+      });
+  }
+
   useEffect(() => {
     fetch("/areas")
       .then((res) => res.json())
