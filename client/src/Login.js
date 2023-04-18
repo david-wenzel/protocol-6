@@ -37,6 +37,11 @@ function Login() {
       });
   }
 
+  //   function handleGoogleLogin(e) {
+  //     e.preventDefault();
+  //     window.location.assign("/auth/google_oauth2"); // Change this to your OmniAuth Google OAuth2 path
+  //   }
+
   return (
     <>
       <div>
@@ -66,6 +71,12 @@ function Login() {
             {err}
           </li>
         ))}
+        <a
+          href="http://localhost:3000/auth/google_oauth2"
+          className="google-login-btn"
+        >
+          Login with Google
+        </a>
         <NavLink to={"/signup"}>
           {" "}
           <p>create an account</p>

@@ -15,4 +15,16 @@ class SessionsController < ApplicationController
         session.delete :user_id
         head :no_content
     end
+
+    def omniauth
+        auth = request.env['omniauth.auth']
+    
+        render json: {
+          provider: auth.provider,
+          uid: auth.uid,
+          name: auth.info.name,
+          email: auth.info.email,
+          image: auth.info.image,
+          raw_info: auth.extra.raw_info
+        }   end
 end

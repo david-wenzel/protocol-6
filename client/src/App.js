@@ -8,6 +8,7 @@ import Protocols from "./Protocols";
 
 function App() {
   const [areas, setAreas] = useState([]);
+  const [errorsList, setErrorsList] = useState([]);
 
   function addProtocol(protocol) {
     fetch("/protocols", {
@@ -32,7 +33,7 @@ function App() {
             }
           });
 
-          setBoards(updatedAreas);
+          setAreas(updatedAreas);
         } else {
           setErrorsList(data.errors);
         }
