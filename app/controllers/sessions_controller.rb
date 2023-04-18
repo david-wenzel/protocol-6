@@ -16,15 +16,34 @@ class SessionsController < ApplicationController
         head :no_content
     end
 
+
+    # def omniauth
+    # this works to json to new page iwith id of the user 
+    #     auth = request.env['omniauth.auth']
+    #     user = User.find_or_create_by(username: auth['info']['email']) do |u|
+    #       u.username = auth['info']['email']
+    #       u.password = SecureRandom.hex # Generate a random password for the user
+    #     end
+    #     session[:user_id] = user.id
+    #     render json: user, status: :created
+    #     # other logic (e.g., setting up session, redirecting, etc.)
+    #   end
+
     def omniauth
         auth = request.env['omniauth.auth']
+        user = User.find_or_create_by(username: auth['info']['email']) do |u|
+          u.username = auth['info']['email']
+          u.password = SecureRandom.hex # Generate a random password for the user
+        end
     
-        render json: {
-          provider: auth.provider,
-          uid: auth.uid,
-          name: auth.info.name,
-          email: auth.info.email,
-          image: auth.info.image,
-          raw_info: auth.extra.raw_info
-        }   end
-end
+        if user
+          session[:user_id] = user.id
+          # Redirect to the frontend route after successful login
+          redirect_to "http://localhost:4000/areas"
+        else
+          # Redirect to the login page if the user could not be logged in
+          redirect_to "http://localhost:4000/login"
+        end
+      end
+
+    end

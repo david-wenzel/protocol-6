@@ -42,6 +42,33 @@ function Login() {
   //     window.location.assign("/auth/google_oauth2"); // Change this to your OmniAuth Google OAuth2 path
   //   }
 
+  //   function handleGoogleLogin(e) {
+  //     e.preventDefault();
+  //     fetch("/auth/google_oauth2")
+  //       .then((response) => {
+  //         if (response.ok) {
+  //           return response.json();
+  //         } else {
+  //           throw new Error("Google OAuth login failed");
+  //         }
+  //       })
+  //       .then((user) => {
+  //         if (!user.errors) {
+  //           login(user);
+  //           navigate("/areas");
+  //         } else {
+  //           setUsername("");
+  //           setPassword("");
+  //           setErrorsList(user.errors);
+  //         }
+  //         console.log(user);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error during Google OAuth login:", error);
+  //         // Handle the error as needed (e.g., show an error message).
+  //       });
+  //   }
+
   return (
     <>
       <div>
