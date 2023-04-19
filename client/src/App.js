@@ -10,6 +10,15 @@ function App() {
   const [areas, setAreas] = useState([]);
   const [errorsList, setErrorsList] = useState([]);
 
+  useEffect(() => {
+    fetch("/areas")
+      .then((res) => res.json())
+      .then((data) => {
+        setAreas(data);
+      });
+    console.log("areas:", { areas });
+  }, []);
+
   function addProtocol(protocol) {
     fetch("/protocols", {
       method: "POST",
@@ -40,15 +49,6 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    fetch("/areas")
-      .then((res) => res.json())
-      .then((data) => {
-        setAreas(data);
-      });
-    console.log("areas:", { areas });
-  }, []);
-
   return (
     <div className="App">
       <UserProvider>
@@ -68,10 +68,10 @@ function App() {
               path="/areas/:id"
               element={
                 <Protocols
-                  // errorsList={errorsList}
+                  errorsList={errorsList}
                   // deleteProtocol={deleteProtocol}
                   // handleEditProtocol={handleEditProtocol}
-                  // addProtocol={addProtocol}
+                  addProtocol={addProtocol}
                   areas={areas}
                 />
               }
