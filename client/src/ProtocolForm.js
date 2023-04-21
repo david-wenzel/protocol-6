@@ -8,6 +8,7 @@ export default function ProtocolForm({ id, addProtocol, errorsList }) {
   const initialValues = {
     img_url: "",
     body: "",
+    title: "",
     area_id: id,
     user_id: user.id,
   };
@@ -49,6 +50,14 @@ export default function ProtocolForm({ id, addProtocol, errorsList }) {
             type="text"
             name="body"
             placeholder="post_body"
+            value={values.post_body}
+            onChange={handleChange}
+          />
+          <input
+            className="form-input"
+            type="text"
+            name="title"
+            placeholder="title"
             value={values.post_body}
             onChange={handleChange}
           />

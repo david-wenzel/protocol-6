@@ -12,6 +12,7 @@ export default function ProtocolCard({
 }) {
   const [isEdit, setIsEdit] = useState(false);
   const { user } = useContext(UserContext);
+  console.log(protocol);
 
   function handleEditClick() {
     setIsEdit(!isEdit);
@@ -25,6 +26,7 @@ export default function ProtocolCard({
 
   const renderProtocol = (
     <div key={protocol.id}>
+      <h1>{protocol.title}</h1>
       <img src={protocol.img_url} alt="" />
       <p className="protocolBody">{protocol.body}</p>
       {/* <button id='deleteBtn'
