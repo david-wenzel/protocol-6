@@ -9,25 +9,32 @@ export default function SavedProtocols({
 }) {
   const { loggedIn } = useContext(UserContext);
 
-  // Create a protocolLookup object to map protocol_id to protocol object
-  const protocolLookup = areas.reduce((lookup, area) => {
-    area.protocols.forEach((protocol) => {
-      lookup[protocol.id] = protocol;
-    });
-    return lookup;
-  }, {});
+  let protocolLookup = {};
+  if (areas) {
+    // Create a protocolLookup object to map protocol_id to protocol object
+    protocolLookup = areas.reduce((lookup, area) => {
+      area.protocols.forEach((protocol) => {
+        lookup[protocol.id] = protocol;
+      });
+      return lookup;
+    }, {});
+  }
 
   let renderProtocols;
   if (savedProtocols) {
     renderProtocols = savedProtocols.map((savedProtocol) => {
       const protocol = protocolLookup[savedProtocol.protocol_id];
-      return (
-        <ProtocolCard
-          key={protocol.id}
-          protocol={protocol}
-          deleteProtocol={deleteProtocol}
-        />
-      );
+      if (protocol) {
+        return (
+          <ProtocolCard
+            key={protocol.id}
+            protocol={protocol}
+            deleteProtocol={deleteProtocol}
+          />
+        );
+      } else {
+        return null;
+      }
     });
   }
 

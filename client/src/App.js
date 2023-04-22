@@ -132,6 +132,7 @@ function App() {
                 <SavedProtocols
                   // handleEditProtocol={handleEditProtocol}
                   savedProtocols={savedProtocols}
+                  areas={areas}
                 />
               }
             />
