@@ -15,32 +15,32 @@ Area.create!([{
     title: "running"
 }])
 
-User.create!([{
-    username: "david",
-    password: "david"
-},
-{
-    username: "user",
-    password: "user"
-},
-{
-    username: "lexi",
-    password: "lexi"
-},
-{
-    username: "louie",
-    password: "louie"
-}])
+# User.create!([{
+#     username: "david",
+#     password: "david"
+# },
+# {
+#     username: "user",
+#     password: "user"
+# },
+# {
+#     username: "lexi",
+#     password: "lexi"
+# },
+# {
+#     username: "louie",
+#     password: "louie"
+# }])
 
 
-Protocol.create!([{
-    title: "calm energy",
-    img_url: "calm energy",
-    body: "today is the day that we move",
-    area_id: 1,
-    user_id: 1
-}])
+# Protocol.create!([{
+#     title: "calm energy",
+#     img_url: "calm energy",
+#     body: "today is the day that we move",
+#     area_id: 1,
+#     user_id: 1
+# }])
 
-SavedProtocol.create!([
-    { protocol_id: 1, user_id: 1 }
-  ])
+# SavedProtocol.create!([
+#     { protocol_id: 1, user_id: 1 }
+#   ])
