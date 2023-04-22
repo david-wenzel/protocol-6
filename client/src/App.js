@@ -108,6 +108,15 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/saved_protocols"
+              element={
+                <SavedProtocols
+                  // handleEditProtocol={handleEditProtocol}
+                  savedProtocols={savedProtocols}
+                />
+              }
+            />
             <Route path="/signup" element={<Signup />} />
 
             <Route path="/login" element={<Login />} />
