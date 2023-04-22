@@ -17,7 +17,6 @@ export default function ProtocolForm({ id, addProtocol, errorsList }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setValues({
       ...values,
       [name]: value,

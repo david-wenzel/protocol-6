@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Areas from "./Areas";
 import Protocols from "./Protocols";
+import Signup from "./Signup";
 
 function App() {
   const [areas, setAreas] = useState([]);
@@ -16,7 +17,6 @@ function App() {
       .then((data) => {
         setAreas(data);
       });
-    console.log("areas:", { areas });
   }, []);
 
   function addProtocol(protocol) {
@@ -76,6 +76,8 @@ function App() {
                 />
               }
             />
+            <Route path="/signup" element={<Signup />} />
+
             <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
