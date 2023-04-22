@@ -26,6 +26,9 @@ function Navbar() {
             <img className="spin" src="" alt="Inspo.Group" />
           </h1>
         </NavLink>
+        <NavLink to={"/saved_protocols"}>
+          <button>Saved Protocols</button>
+        </NavLink>
         {/* <h3>Hello {user.username}</h3> */}
         <button id="logout" onClick={logoutUser}>
           Logout {user.username}
