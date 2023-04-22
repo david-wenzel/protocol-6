@@ -9,6 +9,7 @@ export default function ProtocolCard({
   protocol,
   handleEditProtocol,
   deleteProtocol,
+  saveProtocol,
 }) {
   const [isEdit, setIsEdit] = useState(false);
   const { user } = useContext(UserContext);
@@ -23,11 +24,19 @@ export default function ProtocolCard({
     deleteProtocol(protocol);
   }
 
+  function handleSaveClick(e, protocol) {
+    e.preventDefault();
+    saveProtocol(protocol.id);
+  }
+
   const renderProtocol = (
     <div key={protocol.id}>
       <h1>{protocol.title}</h1>
       <img src={protocol.img_url} alt="" />
       <p className="protocolBody">{protocol.body}</p>
+      <button id="saveBtn" onClick={(e) => handleSaveClick(e, protocol)}>
+        Save
+      </button>
       {/* <button id='deleteBtn'
 onClick={(e) => handleDeleteClick(e, protocol)}
 >X</button> /}

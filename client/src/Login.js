@@ -33,7 +33,6 @@ function Login() {
           setPassword("");
           setErrorsList(user.errors);
         }
-        console.log(user);
       });
   }
 

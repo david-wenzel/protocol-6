@@ -11,6 +11,7 @@ export default function Protocols({
   addProtocol,
   deleteProtocol,
   handleEditProtocol,
+  saveProtocol,
   errorsList,
 }) {
   const [currentArea, setCurrentArea] = useState({ protocols: [] });
@@ -38,6 +39,7 @@ export default function Protocols({
         protocol={protocol}
         handleEditProtocol={handleEditProtocol}
         deleteProtocol={deleteProtocol}
+        saveProtocol={saveProtocol}
       />
     ));
   }

@@ -6,6 +6,7 @@ import Login from "./Login";
 import Areas from "./Areas";
 import Protocols from "./Protocols";
 import Signup from "./Signup";
+import SavedProtocols from "./SavedProtocols";
 import "./App.css";
 
 function App() {
@@ -81,6 +82,22 @@ function App() {
     });
   }
 
+  function saveProtocol(protocol_id) {
+    fetch("/saved_protocols", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ protocol_id }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.errors) {
+          setSavedProtocols([...savedProtocols, data]);
+        } else {
+          setErrorsList(data.errors);
+        }
+      });
+  }
+
   return (
     <div className="App">
       <UserProvider>
@@ -103,6 +120,7 @@ function App() {
                   errorsList={errorsList}
                   deleteProtocol={deleteProtocol}
                   // handleEditProtocol={handleEditProtocol}
+                  saveProtocol={saveProtocol}
                   addProtocol={addProtocol}
                   areas={areas}
                 />
