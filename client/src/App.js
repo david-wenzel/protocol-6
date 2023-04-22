@@ -6,6 +6,7 @@ import Login from "./Login";
 import Areas from "./Areas";
 import Protocols from "./Protocols";
 import Signup from "./Signup";
+import "./App.css";
 
 function App() {
   const [areas, setAreas] = useState([]);
