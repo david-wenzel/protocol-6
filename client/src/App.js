@@ -49,6 +49,27 @@ function App() {
       });
   }
 
+  function deleteProtocol(protocol) {
+    fetch(`/protocols/${protocol.id}`, {
+      method: "DELETE",
+    }).then((res) => {
+      if (res.ok) {
+        // Remove the deleted post from the posts array of the matching board
+        const updatedAreas = areas.map((area) => {
+          if (area.id === parseInt(protocol.area_id)) {
+            return {
+              ...area,
+              protocols: area.protocols.filter((p) => p.id !== protocol.id),
+            };
+          } else {
+            return area;
+          }
+        });
+        setAreas(updatedAreas);
+      }
+    });
+  }
+
   return (
     <div className="App">
       <UserProvider>
@@ -69,7 +90,7 @@ function App() {
               element={
                 <Protocols
                   errorsList={errorsList}
-                  // deleteProtocol={deleteProtocol}
+                  deleteProtocol={deleteProtocol}
                   // handleEditProtocol={handleEditProtocol}
                   addProtocol={addProtocol}
                   areas={areas}
