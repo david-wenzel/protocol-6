@@ -1,7 +1,7 @@
 import { UserProvider } from "./context/user";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import Login from "./Login";
 import Areas from "./Areas";
 import Protocols from "./Protocols";
@@ -52,8 +52,8 @@ function App() {
   return (
     <div className="App">
       <UserProvider>
-        {/* <NavBar /> */}
         <Router>
+          <NavBar />
           <Routes>
             <Route
               path="/areas"
