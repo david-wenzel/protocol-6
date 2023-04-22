@@ -43,7 +43,7 @@ function Navbar() {
       <div className="navbar">
         <NavLink to={"/login"}>
           <h1>
-            <img className="spin" src="" alt="Inspo.Group" />
+            <img className="" src="" alt="Inspo.Group" />
           </h1>
         </NavLink>
         {/* <NavLink to="/login"> */}
