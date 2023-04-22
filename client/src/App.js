@@ -11,12 +11,22 @@ import "./App.css";
 function App() {
   const [areas, setAreas] = useState([]);
   const [errorsList, setErrorsList] = useState([]);
+  const [savedProtocols, setSavedProtocols] = useState([]);
 
   useEffect(() => {
     fetch("/areas")
       .then((res) => res.json())
       .then((data) => {
         setAreas(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("/saved_protocols")
+      .then((res) => res.json())
+      .then((data) => {
+        setSavedProtocols(data);
+        console.log("saved:", { data });
       });
   }, []);
 
