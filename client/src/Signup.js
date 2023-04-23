@@ -27,7 +27,7 @@ function Signup() {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate("/areas");
+          navigate("/home");
         } else {
           setUsername("");
           setPassword("");
