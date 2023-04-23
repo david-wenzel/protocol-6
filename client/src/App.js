@@ -41,9 +41,9 @@ function App() {
       });
   }
 
-  useEffect(() => {
-    fetchSavedProtocols();
-  }, []);
+  // useEffect(() => {
+  //   fetchSavedProtocols();
+  // }, [loggedIn]);
 
   function addProtocol(protocol) {
     fetch("/protocols", {

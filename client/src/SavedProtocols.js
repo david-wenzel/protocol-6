@@ -10,8 +10,10 @@ export default function SavedProtocols({
   const { loggedIn } = useContext(UserContext);
 
   useEffect(() => {
-    fetchSavedProtocols(); // Call the function passed from App
-  }, []); // Add fetchSavedProtocols as a dependency
+    if (loggedIn) {
+      fetchSavedProtocols();
+    }
+  }, [loggedIn, fetchSavedProtocols]);
 
   let protocolLookup = {};
   if (areas) {
