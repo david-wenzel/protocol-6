@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 const UserContext = React.createContext();
 
 //create provider component
-function UserProvider({ children }) {
+function UserProvider({ children, clearSavedProtocols }) {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -32,6 +32,7 @@ function UserProvider({ children }) {
     // navigate("/");
     setUser({});
     setLoggedIn(false); // set loggedIn flag
+    clearSavedProtocols();
   }
 
   function signup(user) {

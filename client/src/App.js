@@ -133,9 +133,13 @@ function App() {
     setAreas(updatedAreas);
   }
 
+  function clearSavedProtocols() {
+    setSavedProtocols([]);
+  }
+
   return (
     <div className="App">
-      <UserProvider>
+      <UserProvider clearSavedProtocols={clearSavedProtocols}>
         <Router>
           <NavBar />
           <Routes>
