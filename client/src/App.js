@@ -105,7 +105,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route
-              path="/areas"
+              path="/home"
               element={
                 <Areas
                   // errorsList={errorsList}
@@ -114,7 +114,7 @@ function App() {
               }
             />
             <Route
-              path="/areas/:id"
+              path="/home/:id"
               element={
                 <Protocols
                   errorsList={errorsList}
@@ -127,7 +127,7 @@ function App() {
               }
             />
             <Route
-              path="/saved_protocols"
+              path="/mysaved_protocols"
               element={
                 <SavedProtocols
                   // handleEditProtocol={handleEditProtocol}
