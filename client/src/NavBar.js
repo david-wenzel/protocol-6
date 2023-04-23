@@ -21,12 +21,12 @@ function Navbar() {
   if (loggedIn) {
     return (
       <div className="navbar">
-        <NavLink to={"/areas"}>
+        <NavLink to={"/home"}>
           <h1>
             <img className="spin" src="" alt="Inspo.Group" />
           </h1>
         </NavLink>
-        <NavLink to={"/saved_protocols"}>
+        <NavLink to={"/mysaved_protocols"}>
           <button>Saved Protocols</button>
         </NavLink>
         {/* <h3>Hello {user.username}</h3> */}

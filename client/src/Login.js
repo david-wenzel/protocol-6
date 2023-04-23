@@ -27,7 +27,7 @@ function Login() {
       .then((user) => {
         if (!user.errors) {
           login(user);
-          navigate("/areas");
+          navigate("/home");
         } else {
           setUsername("");
           setPassword("");
@@ -98,7 +98,7 @@ function Login() {
           </li>
         ))}
         <a
-          href="http://localhost:3000/auth/google_oauth2"
+          href="https://protocol-6.onrender.com/auth/google_oauth2"
           className="google-login-btn"
         >
           Login with Google
