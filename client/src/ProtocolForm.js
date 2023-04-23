@@ -52,6 +52,7 @@ export default function ProtocolForm({ id, addProtocol, errorsList }) {
             value={values.post_body}
             onChange={handleChange}
           />
+          <br />
           <input
             className="form-input"
             type="text"
@@ -60,6 +61,7 @@ export default function ProtocolForm({ id, addProtocol, errorsList }) {
             value={values.post_body}
             onChange={handleChange}
           />
+          <br />
         </label>
         <input type="submit" value="+" />
       </form>

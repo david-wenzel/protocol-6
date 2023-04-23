@@ -22,9 +22,7 @@ function Navbar() {
     return (
       <div className="navbar">
         <NavLink to={"/home"}>
-          <h1>
-            <img className="spin" src="" alt="Inspo.Group" />
-          </h1>
+          <h1>PROTOCOL_6</h1>
         </NavLink>
         <NavLink to={"/mysaved_protocols"}>
           <button>Saved Protocols</button>
@@ -42,9 +40,7 @@ function Navbar() {
     return (
       <div className="navbar">
         <NavLink to={"/login"}>
-          <h1>
-            <img className="" src="" alt="Inspo.Group" />
-          </h1>
+          <h1>PROTOCOL_6</h1>
         </NavLink>
         {/* <NavLink to="/login"> */}
         {/* <button>Login</button> */}

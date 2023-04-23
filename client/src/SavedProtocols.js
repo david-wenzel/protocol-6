@@ -1,13 +1,17 @@
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./context/user";
-import ProtocolCard from "./ProtocolCard";
+import SavedProtocolCard from "./SavedProtocolCard";
 
 export default function SavedProtocols({
   areas,
   savedProtocols,
-  deleteProtocol,
+  fetchSavedProtocols,
 }) {
   const { loggedIn } = useContext(UserContext);
+
+  useEffect(() => {
+    fetchSavedProtocols(); // Call the function passed from App
+  }, []); // Add fetchSavedProtocols as a dependency
 
   let protocolLookup = {};
   if (areas) {
@@ -25,17 +29,13 @@ export default function SavedProtocols({
     renderProtocols = savedProtocols.map((savedProtocol) => {
       const protocol = protocolLookup[savedProtocol.protocol_id];
       if (protocol) {
-        return (
-          <ProtocolCard
-            key={protocol.id}
-            protocol={protocol}
-            deleteProtocol={deleteProtocol}
-          />
-        );
+        return <SavedProtocolCard key={protocol.id} protocol={protocol} />;
       } else {
         return null;
       }
     });
+  } else {
+    renderProtocols = null; // add this line to handle case where savedProtocols is undefined
   }
 
   if (loggedIn) {

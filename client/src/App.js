@@ -22,13 +22,26 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetch("/saved_protocols")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setSavedProtocols(data);
+  //       console.log("saved:", { data });
+  //     });
+  // }, []);
+
+  function fetchSavedProtocols() {
     fetch("/saved_protocols")
       .then((res) => res.json())
       .then((data) => {
         setSavedProtocols(data);
         console.log("saved:", { data });
       });
+  }
+
+  useEffect(() => {
+    fetchSavedProtocols();
   }, []);
 
   function addProtocol(protocol) {
@@ -98,6 +111,27 @@ function App() {
       });
   }
 
+  function handleEditProtocol(editedProtocol) {
+    const updatedAreas = areas.map((area) => {
+      if (area.id === parseInt(editedProtocol.area_id)) {
+        const updatedProtocols = area.protocols.map((p) => {
+          if (p.id === editedProtocol.id) {
+            return editedProtocol;
+          } else {
+            return p;
+          }
+        });
+        return {
+          ...area,
+          protocols: updatedProtocols,
+        };
+      } else {
+        return area;
+      }
+    });
+    setAreas(updatedAreas);
+  }
+
   return (
     <div className="App">
       <UserProvider>
@@ -119,7 +153,7 @@ function App() {
                 <Protocols
                   errorsList={errorsList}
                   deleteProtocol={deleteProtocol}
-                  // handleEditProtocol={handleEditProtocol}
+                  handleEditProtocol={handleEditProtocol}
                   saveProtocol={saveProtocol}
                   addProtocol={addProtocol}
                   areas={areas}
@@ -133,6 +167,7 @@ function App() {
                   // handleEditProtocol={handleEditProtocol}
                   savedProtocols={savedProtocols}
                   areas={areas}
+                  fetchSavedProtocols={fetchSavedProtocols}
                 />
               }
             />

@@ -8,6 +8,7 @@ const UserContext = React.createContext();
 function UserProvider({ children }) {
   const [user, setUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+
   //   const navigate = useNavigate();
   useEffect(() => {
     fetch("/me")

@@ -3,7 +3,7 @@ import { UserContext } from "./context/user";
 import "./App.css";
 
 // import { useState } from 'react';
-// import ProtocolEditForm from "./ProtocolEditForm";
+import ProtocolEditForm from "./ProtocolEditForm";
 
 export default function ProtocolCard({
   protocol,
@@ -56,11 +56,11 @@ onClick={(e) => handleDeleteClick(e, protocol)}
         X
       </button>
       <br />
-      {/* <ProtocolEditForm
+      <ProtocolEditForm
         protocol={protocol}
         handleEditProtocol={handleEditProtocol}
         handleEditClick={handleEditClick}
-      /> */}
+      />
       <button id="editBtn" onClick={(e) => handleEditClick(e, protocol)}>
         Edit
       </button>
@@ -69,8 +69,13 @@ onClick={(e) => handleDeleteClick(e, protocol)}
 
   const renderNotUserProtocol = (
     <div key={protocol.id}>
+      <h1>{protocol.title}</h1>
+
       <img src={protocol.img_url} alt="" />
       <p className="protocolBody">{protocol.body}</p>
+      <button id="saveBtn" onClick={(e) => handleSaveClick(e, protocol)}>
+        Save
+      </button>
     </div>
   );
 
