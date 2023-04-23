@@ -4,3 +4,74 @@
   text-align: center;
   font-family: "IBM Plex Mono", monospace;
 }
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.app-name {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0rem;
+  border: 1px solid #ccc;
+}
+
+.photo-container {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.navbar .right-buttons {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+.navbar button {
+  margin-left: 1rem;
+}

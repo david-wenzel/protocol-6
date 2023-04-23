@@ -24,19 +24,21 @@ function Navbar() {
         <NavLink to={"/home"}>
           <h1>PROTOCOL_6</h1>
         </NavLink>
-        <NavLink to={"/mysaved_protocols"}>
-          <button>Saved Protocols</button>
-        </NavLink>
-        {/* <h3>Hello {user.username}</h3> */}
-        <button id="logout" onClick={logoutUser}>
-          Logout {user.username}
-        </button>
-        <NavLink to={"/about"}>
-          <button>About</button>
-        </NavLink>
-        {/* <NavLink to="/"> */}
-        {/* <button>Home</button> */}
-        {/* </NavLink> */}
+        <div className="right-buttons">
+          <NavLink to={"/mysaved_protocols"}>
+            <button>Saved Protocols</button>
+          </NavLink>
+          {/* <h3>Hello {user.username}</h3> */}
+          <button id="logout" onClick={logoutUser}>
+            Logout {user.username}
+          </button>
+          <NavLink to={"/about"}>
+            <button>About</button>
+          </NavLink>
+          {/* <NavLink to="/"> */}
+          {/* <button>Home</button> */}
+          {/* </NavLink> */}
+        </div>
       </div>
     );
   } else {

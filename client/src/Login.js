@@ -70,48 +70,53 @@ function Login() {
 
   return (
     <>
-      <div>
-        <p className="about">protocol 6</p>
-        <form onSubmit={handleSubmit}>
-          <span style={{ fontWeight: "bold" }}>Login:</span>
+      <div className="login-page">
+        <div className="login-form-container">
+          <p className="app-name">protocol 6</p>
+          <form className="login-form" onSubmit={handleSubmit}>
+            <span style={{ fontWeight: "bold" }}>Login:</span>
+            <br />
+            <input
+              id="username"
+              label="Username"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+            <br />
+            <input
+              label="Password"
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <input type="submit" value="login" />
+          </form>
+          {errorsList.map((err) => (
+            <li style={{ color: "red" }} key={err}>
+              {err}
+            </li>
+          ))}
+          <p3>or</p3>
           <br />
-          <input
-            id="username"
-            label="Username"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-          <br />
-          <input
-            label="Password"
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <input type="submit" value="login" />
-        </form>
-        {errorsList.map((err) => (
-          <li style={{ color: "red" }} key={err}>
-            {err}
-          </li>
-        ))}
-        <p3>or</p3>
-        <br />
-        <a
-          href="https://protocol-6.onrender.com/auth/google_oauth2"
-          className="google-login-btn"
-        >
-          <img
-            src="https://developers.google.com/static/identity/images/btn_google_signin_light_normal_web.png"
-            alt="Sign in with Google"
-          />
-        </a>
-        <NavLink to={"/signup"}>
-          {" "}
-          <p>create an account</p>
-        </NavLink>
+          <a
+            href="https://protocol-6.onrender.com/auth/google_oauth2"
+            className="google-login-btn"
+          >
+            <img
+              src="https://developers.google.com/static/identity/images/btn_google_signin_light_normal_web.png"
+              alt="Sign in with Google"
+            />
+          </a>
+          <NavLink to={"/signup"}>
+            {" "}
+            <p>create an account</p>
+          </NavLink>
+        </div>
+        <div className="photo-container">
+          <img src="" />
+        </div>
       </div>
     </>
   );
