@@ -7,6 +7,7 @@ import Areas from "./Areas";
 import Protocols from "./Protocols";
 import Signup from "./Signup";
 import SavedProtocols from "./SavedProtocols";
+import About from "./About";
 import "./App.css";
 
 function App() {
@@ -171,6 +172,8 @@ function App() {
                 />
               }
             />
+            <Route path="about" element={<About />} />
+
             <Route path="/signup" element={<Signup />} />
 
             <Route path="/login" element={<Login />} />
