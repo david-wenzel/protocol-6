@@ -72,7 +72,9 @@ function Login() {
     <>
       <div className="login-page">
         <div className="login-form-container">
-          <p className="app-name">protocol 6</p>
+          <p className="app-name">
+            PROTOCOL<span>_</span>6
+          </p>
           <form className="login-form" onSubmit={handleSubmit}>
             <span style={{ fontWeight: "bold" }}>Login:</span>
             <br />
