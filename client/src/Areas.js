@@ -17,7 +17,7 @@ function Areas({ areas }) {
   ));
 
   if (loggedIn) {
-    return <div>{renderAreas}</div>;
+    return <div className="area-list">{renderAreas}</div>;
   } else {
     return (
       <div>

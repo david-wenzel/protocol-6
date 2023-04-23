@@ -128,6 +128,10 @@ export default function ProtocolCard({
   const renderProtocol = (
     <div>
       <h1 onClick={toggleDetails}>{protocol.title}</h1>
+      <p className="expand-indicator" onClick={toggleDetails}>
+        click to expand
+      </p>
+
       {showDetails && (
         <>
           <img src={protocol.img_url} alt="" />
@@ -146,6 +150,9 @@ export default function ProtocolCard({
   const renderEditProtocol = (
     <div>
       <h1 onClick={toggleDetails}>{protocol.title}</h1>
+      <p className="expand-indicator" onClick={toggleDetails}>
+        v
+      </p>
       {showDetails && (
         <>
           <img src={protocol.img_url} alt="" />
@@ -173,6 +180,10 @@ export default function ProtocolCard({
   const renderNotUserProtocol = (
     <div>
       <h1 onClick={toggleDetails}>{protocol.title}</h1>
+      <p className="expand-indicator" onClick={toggleDetails}>
+        v
+      </p>
+
       {showDetails && (
         <>
           <img src={protocol.img_url} alt="" />

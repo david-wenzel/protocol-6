@@ -26,9 +26,29 @@ body {
   background-color: #ffffff;
 }
 
+.expand-indicator {
+  font-size: 0.2em;
+  margin: 0;
+  margin-top: -1em;
+  padding: 0;
+  line-height: 0.8;
+  cursor: pointer;
+}
+
 .app-name {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.area-list {
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0;
+  margin-top: 5rem;
+}
+
+.area-list li {
+  text-align: left;
 }
 
 .login-form {
@@ -105,4 +125,9 @@ body {
   100% {
     opacity: 0;
   }
+}
+
+.logo {
+  margin: 0;
+  text-decoration: none;
 }

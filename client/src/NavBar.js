@@ -22,7 +22,7 @@ function Navbar() {
     return (
       <div className="navbar">
         <NavLink to={"/home"}>
-          <h1>PROTOCOL_6</h1>
+          <h1 className="logo">PROTOCOL_6</h1>
         </NavLink>
         <div className="right-buttons">
           <NavLink to={"/about"}>
