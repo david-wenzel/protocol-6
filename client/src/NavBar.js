@@ -25,6 +25,9 @@ function Navbar() {
           <h1>PROTOCOL_6</h1>
         </NavLink>
         <div className="right-buttons">
+          <NavLink to={"/about"}>
+            <button>About</button>
+          </NavLink>
           <NavLink to={"/mysaved_protocols"}>
             <button>Saved Protocols</button>
           </NavLink>
@@ -32,9 +35,6 @@ function Navbar() {
           <button id="logout" onClick={logoutUser}>
             Logout {user.username}
           </button>
-          <NavLink to={"/about"}>
-            <button>About</button>
-          </NavLink>
           {/* <NavLink to="/"> */}
           {/* <button>Home</button> */}
           {/* </NavLink> */}
