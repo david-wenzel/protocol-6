@@ -39,7 +39,9 @@ class SessionsController < ApplicationController
         if user
           session[:user_id] = user.id
           # Redirect to the frontend route after successful login
-          redirect_to "http://localhost:4000/areas"
+          # redirect_to "http://localhost:4000/areas"
+          redirect_to "https://protocol-6.onrender.com/areas"
+
         else
           # Redirect to the login page if the user could not be logged in
           redirect_to "http://localhost:4000/login"
