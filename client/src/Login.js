@@ -97,11 +97,16 @@ function Login() {
             {err}
           </li>
         ))}
+        <p3>or</p3>
+        <br />
         <a
           href="https://protocol-6.onrender.com/auth/google_oauth2"
           className="google-login-btn"
         >
-          Login with Google
+          <img
+            src="https://developers.google.com/static/identity/images/btn_google_signin_light_normal_web.png"
+            alt="Sign in with Google"
+          />
         </a>
         <NavLink to={"/signup"}>
           {" "}
