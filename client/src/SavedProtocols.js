@@ -13,7 +13,7 @@ export default function SavedProtocols({
     if (loggedIn) {
       fetchSavedProtocols();
     }
-  }, [loggedIn, fetchSavedProtocols]);
+  }, [loggedIn]);
 
   let protocolLookup = {};
   if (areas) {

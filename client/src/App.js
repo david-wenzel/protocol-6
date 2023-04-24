@@ -37,7 +37,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setSavedProtocols(data);
-        console.log("saved:", { data });
       });
   }
 
